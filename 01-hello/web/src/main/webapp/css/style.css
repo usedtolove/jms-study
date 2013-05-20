@@ -1,0 +1,26 @@
+.stockTable th {
+    background-color: #FF5113;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #FFFFFF;
+    padding-bottom: 3px;
+}
+
+.stockTable tr td {
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0 0 1px;
+    height: 22px;
+    text-align: center;
+}
+
+.ups {
+    color: red;
+    font-weight: bolder;
+}
+
+.downs {
+    color: green;
+    font-weight: bolder;
+}
