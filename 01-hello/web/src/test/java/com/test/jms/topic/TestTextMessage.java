@@ -29,6 +29,9 @@ public class TestTextMessage{
         try {
             //连接工厂，用于产生连接
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(user, password, url);
+            System.out.println("user:"+user);
+            System.out.println("password:"+password);
+            System.out.println("url:"+url);
             //创建连接
             connection = connectionFactory.createTopicConnection();
             connection.start();
@@ -51,7 +54,7 @@ public class TestTextMessage{
                 }
                 System.out.println("发送消息 " + i + ":" + message.getText()+new Date());
                 try {
-                    Thread.sleep(20000);
+                    Thread.sleep(3000);
                 } catch (Exception e) {
                 }
             }
@@ -75,6 +78,10 @@ public class TestTextMessage{
             ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(user, password, url);
             TopicConnection connection = connectionFactory.createTopicConnection();
             connection.start();
+
+            System.out.println("user:"+user);
+            System.out.println("password:"+password);
+            System.out.println("url:"+url);
 
             TopicSession subSession = connection.createTopicSession(transacted, Session.AUTO_ACKNOWLEDGE);
             Topic topic = subSession.createTopic(subject);

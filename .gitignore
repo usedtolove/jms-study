@@ -1,3 +1,9 @@
+# gradle #
+**/taskArtifacts
+
+# bower #
+**/bower_components
+
 #################
 ## IDEA
 #################

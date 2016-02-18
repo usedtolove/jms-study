@@ -1,0 +1,55 @@
+group = 'com.tz.train'
+version = '1.0'
+description = """JMS :: Web Server"""
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:1.2.4'
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+gretty {
+    servletContainer = 'tomcat8'
+    httpPort = 18888
+    contextPath = '/jmsChat'
+    fastReload = true
+    managedClassReload = false
+    reloadOnClassChange =false
+    reloadOnConfigChange =false
+    reloadOnLibChange =false
+}
+
+
+repositories {
+    maven{ url 'http://maven.oschina.net/content/groups/public/'}
+//    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.1.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-websocket', version:'4.1.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-messaging', version:'4.1.1.RELEASE'
+    compile group: 'javax.servlet', name: 'jstl', version:'1.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version:'2.3.3'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.3.3'
+    compile group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version:'2.3.3'
+    runtime 'org.fluttercode.datafactory:datafactory:0.8'
+    providedCompile group: 'javax.websocket', name: 'javax.websocket-api', version:'1.1'
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
+}
