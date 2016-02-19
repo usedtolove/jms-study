@@ -1,5 +1,6 @@
 package com.tz.init;
 
+import com.tz.jms.JmsConfig;
 import com.tz.service.AppConfig;
 import com.tz.web.controller.WebConfig;
 import com.tz.web.socket.SocketConfig;
@@ -17,7 +18,10 @@ public class MyWebInit extends AbstractAnnotationConfigDispatcherServletInitiali
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class< ?>[] { AppConfig.class, SocketConfig.class };
+        return new Class< ?>[] {
+                AppConfig.class,
+                SocketConfig.class,
+                JmsConfig.class };
     }
 
     @Override

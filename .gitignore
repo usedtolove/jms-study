@@ -1,5 +1,6 @@
 # gradle #
 **/taskArtifacts
+.gradle
 
 # bower #
 **/bower_components
