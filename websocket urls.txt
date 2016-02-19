@@ -4,15 +4,12 @@ https://github.com/wilk/ng-websocket
 
 https://github.com/AngularClass/angular-websocket
 
-http://g00glen00b.be/spring-angular-sockjs/    --- ok
-
 
 稳定性
 
 兼容性
 
 性能测试
-
 
 
 集成:
