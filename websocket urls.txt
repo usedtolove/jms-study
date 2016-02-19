@@ -14,38 +14,8 @@ http://g00glen00b.be/spring-angular-sockjs/    --- ok
 性能测试
 
 
-AMQP=Advanced Message Queuing Protocol
-
-STOMP=Simple Text Oriented Messaging Protocol
-stomp.js:
-a JavaScript library to write web apps/nodes.js client for STOMP protocol
-http://jmesnil.net/stomp-websocket/doc/
-
-
-MQTT V3.1 Protocol
-Message Queuing Telemetry Transport(MQTT) is a lightweight broker-based publish/subscribe messaging protocol designed to be open, simple, lightweight and easy to implement. These characteristics make it ideal for use in constrained environments, for example, but not limited to:
-
-Where the network is expensive, has low bandwidth or is unreliable
-When run on an embedded device with limited processor or memory resources
-
-http://public.dhe.ibm.com/software/dw/webservices/ws-mqtt/mqtt-v3r1.html
-
-
-rabbitmq
-https://github.com/rabbitmq/rabbitmq-server
-Watch 166
-Star 1,437
-Fork 332
-
-比较
-http://blogs.vmware.com/vfabric/2013/02/choosing-your-messaging-protocol-amqp-mqtt-or-stomp.html
-http://stackoverflow.com/questions/13377992/which-one-to-choose-from-stomp-amqp
 
 集成:
 http://www.atomikos.com/Documentation/TomcatSpringActiveMQMySQLJMXIntegration#ActiveMQLifecycleListener
 http://codedependents.com/2010/03/04/synchronous-request-response-with-activemq-and-spring/
 http://codedependents.com/2009/10/16/efficient-lightweight-jms-with-spring-and-activemq/
-
-
-http://spring.io/guides/gs/messaging-jms/
-https://github.com/spring-guides?utf8=%E2%9C%93&query=messag 非常重要，必看
