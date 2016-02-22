@@ -52,13 +52,19 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-databind:$jackson"
     compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:$jackson"
 
+//    compile "org.springframework.amqp:spring-amqp:1.5.4.RELEASE"
+//    compile "org.codehaus.jackson:ackson-core-asl:1.9.13"
+
 //    compile 'org.apache.activemq:activemq-all:5.13.0'
     compile 'org.apache.activemq:activemq-core:5.7.0'
+    compile 'org.apache.activemq:activemq-broker:5.13.0'
 //    compile 'org.apache.activemq:apache-activemq:5.13.0'
     compile group: 'javax.servlet', name: 'jstl', version:'1.2'
+    compile 'com.alibaba:fastjson:1.2.7'
 
     testCompile 'junit:junit:4.12'
     testCompile "org.springframework:spring-test:$springframework"
+    testCompile 'org.fluttercode.datafactory:datafactory:0.8'
 
     providedCompile group: 'javax.websocket', name: 'javax.websocket-api', version:'1.1'
 //    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'

@@ -20,7 +20,7 @@ public class MyWebInit extends AbstractAnnotationConfigDispatcherServletInitiali
     protected Class<?>[] getRootConfigClasses() {
         return new Class< ?>[] {
                 AppConfig.class,
-                SocketConfig.class,
+//                SocketConfig.class,
                 JmsConfig.class };
     }
 

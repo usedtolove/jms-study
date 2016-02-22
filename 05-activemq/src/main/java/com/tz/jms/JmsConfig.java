@@ -9,6 +9,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.support.converter.MessageConverter;
+import org.springframework.jms.support.converter.SimpleMessageConverter;
 import org.springframework.util.Assert;
 
 /**
@@ -61,6 +63,12 @@ public class JmsConfig {
         return activeMQQueue;
     }
 
+    @Bean
+    public MessageConverter getMessageConverter(){
+        MessageConverter messageConverter = new SimpleMessageConverter();
+        return messageConverter;
+    }
+
     /**
      * JmsTemplate instance that uses the cached connection and destination
      */
@@ -69,6 +77,12 @@ public class JmsConfig {
         JmsTemplate jmsTemplate = new JmsTemplate();
         jmsTemplate.setConnectionFactory(getCachingConnectionFactory());
         jmsTemplate.setDefaultDestination(getDefaultDestination());
+
+        //MessageConverter
+        //default is simpleMessageConverter
+        SimpleMessageConverter simpleMessageConverter = new SimpleMessageConverter();
+        jmsTemplate.setMessageConverter(simpleMessageConverter);
+
         return jmsTemplate;
     }
 

@@ -16,10 +16,15 @@ import java.util.Date;
 @Controller
 public class ChatController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(){
-        System.out.println("index...");
-        return "index";
+    @RequestMapping(value = "/demo1", method = RequestMethod.GET)
+    public String demo1(){
+        System.out.println("demo1...");
+        return "demo1";
     }
 
+    @RequestMapping(value = "/demo2", method = RequestMethod.GET)
+    public String demo2(){
+        System.out.println("demo2...");
+        return "demo2";
+    }
 }
