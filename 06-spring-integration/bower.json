@@ -1,0 +1,24 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/usedtolove/jms-study",
+  "authors": [
+    "usedtolove <usedtolove@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sockjs": "0.3.4",
+    "stomp-websocket": "2.3.4",
+    "angular": "1.4.8",
+    "lodash": "4.5.0"
+  }
+}

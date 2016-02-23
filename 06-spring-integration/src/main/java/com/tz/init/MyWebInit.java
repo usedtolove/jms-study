@@ -1,7 +1,9 @@
 package com.tz.init;
 
 import com.tz.jms.JmsConfig;
+import com.tz.service.AppConfig;
 import com.tz.web.controller.WebConfig;
+import com.tz.web.socket.SocketConfig;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -16,12 +18,16 @@ public class MyWebInit extends AbstractAnnotationConfigDispatcherServletInitiali
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class< ?>[] { JmsConfig.class };
+        return new Class< ?>[] {
+                AppConfig.class,
+                JmsConfig.class,
+                SocketConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class< ?>[] { WebConfig.class };
+        return new Class< ?>[] {
+                WebConfig.class };
     }
 
     @Override

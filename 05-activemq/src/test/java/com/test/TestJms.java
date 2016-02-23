@@ -2,7 +2,6 @@ package com.test;
 
 import com.alibaba.fastjson.JSON;
 import com.tz.jms.JmsConfig;
-import com.tz.service.AppConfig;
 import org.fluttercode.datafactory.impl.DataFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,10 +21,7 @@ import java.util.Map;
  * Created by hjl on 2016/2/19.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {
-        AppConfig.class
-        ,JmsConfig.class
-})
+@ContextConfiguration(classes = { JmsConfig.class })
 public class TestJms {
 
     @Autowired

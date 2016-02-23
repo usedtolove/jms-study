@@ -48,4 +48,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
     }
 
+
+
 }
+
+
