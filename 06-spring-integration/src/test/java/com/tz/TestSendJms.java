@@ -1,4 +1,4 @@
-package com.test;
+package com.tz;
 
 import com.alibaba.fastjson.JSON;
 import com.tz.jms.JmsConfig;
@@ -22,7 +22,7 @@ import java.util.Map;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { JmsConfig.class })
-public class TestJms {
+public class TestSendJms {
 
     @Autowired
     private JmsTemplate jmsTemplate;

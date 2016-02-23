@@ -15,6 +15,7 @@
  */
 package com.tz;
 
+import org.junit.Test;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -30,16 +31,13 @@ import java.io.IOException;
  *
  * @author Christian Posta
  */
-public class CafeDemoAppOperationsActiveMQ {
+public class TestReadOrder2 {
 
-
-	public static void main(String[] args) throws InterruptedException, IOException {
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-				"/activemq/amp-conn.xml",
-				"/META-INF/spring/integration/activemq/cafeDemo-amq-operations.xml");
-
-		System.out.println("Press Enter/Return to exit");
-		System.in.read();
+	@Test
+	public void test1() throws IOException, InterruptedException {
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext( "amp-test.xml");
+		System.out.println("TestReadOrder 2222...");
+        Thread.sleep(10000);
 		context.close();
 	}
 }

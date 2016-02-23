@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+	<bean class="com.tz.service.AppConfig"/>
+	<bean class="com.tz.web.socket.SocketConfig"/>
+
+	<import resource="classpath:activemq/amp-conn.xml"/>
+	<import resource="classpath:activemq/amp-read.xml"/>
+
+</beans>

@@ -1,0 +1,7 @@
+http://docs.spring.io/spring-integration/docs/4.2.4.RELEASE/reference/html/
+
+http://www.intertech.com/Blog/spring-integration-part-2-adapters/
+
+https://dzone.com/articles/spring-boot-example-of-spring-integration-and-acti
+
+http://stackoverflow.com/questions/28587286/having-trouble-with-contenttype-going-from-amqp-to-stomp-message
