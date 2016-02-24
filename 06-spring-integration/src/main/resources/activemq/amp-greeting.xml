@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:int="http://www.springframework.org/schema/integration"
+	   xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms.xsd">
+
+	<int:channel id="greetingChannel"/>
+
+    <int:gateway id="greetingGw" service-interface="com.tz.web.socket.GreetingGateway"/>
+
+	<bean id="greetingQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="si-greeting-queue"/>
+	</bean>
+
+	<int-jms:outbound-channel-adapter id="jmsGreetingQueueAdapter" channel="greetingChannel" destination="greetingQueue"/>
+
+</beans>

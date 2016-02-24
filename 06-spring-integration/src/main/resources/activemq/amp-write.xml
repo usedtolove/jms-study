@@ -12,9 +12,6 @@
 	<int:channel id="orders"/>
 
 	<int:chain input-channel="orders" output-channel="jsonNewOrders">
-		<!--<int:header-enricher>-->
-			<!--<int:header name="NUMBER" expression="payload.getNumber()" />-->
-		<!--</int:header-enricher>-->
 		<int:object-to-json-transformer />
 	</int:chain>
 

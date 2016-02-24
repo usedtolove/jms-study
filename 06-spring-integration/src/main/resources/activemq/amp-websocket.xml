@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+	   xmlns:int-websocket="http://www.springframework.org/schema/integration/websocket"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+        http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms.xsd
+        http://www.springframework.org/schema/integration/websocket http://www.springframework.org/schema/integration/websocket/spring-integration-websocket.xsd">
+
+    <!-- see http://docs.spring.io/spring-integration/docs/4.2.4.RELEASE/reference/html/web-sockets.html -->
+
+    <!-- websocket server container -->
+    <int-websocket:server-container id="myServerContainer"
+                                    path="/myPath"
+                                    send-time-limit="10000"
+                                    send-buffer-size-limit="524288">
+        <int-websocket:sockjs client-library-url="https://d1fxtkz8shb9d2.cloudfront.net/sockjs-0.3.4.min.js"
+                              stream-bytes-limit="131072"
+                              session-cookie-needed="false"
+                              heartbeat-time="25000"/>
+    </int-websocket:server-container>
+
+    <int:channel id="myOutboundChannel" />
+    <!-- websocket outbound-channel-adapter -->
+    <int-websocket:outbound-channel-adapter id="myOutboundChannelAdapter"
+                                            channel="myOutboundChannel"
+                                            container="myServerContainer"/>
+
+
+    <!--<bean id="cafeOrdersQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="si-samples-orders"/>
+    </bean>-->
+
+    <!--<int:channel id="jsonNewOrders"/>-->
+
+    <!--<int-jms:inbound-channel-adapter id="readFromOrderQueueAdapter"
+                                     destination="cafeOrdersQueue"
+                                     auto-startup="true"
+                                     channel="jsonNewOrders"/>-->
+
+    <int:poller default="true" fixed-delay="3000"/>
+
+    <!--<int:bridge input-channel="jsonNewOrders" output-channel="myOutboundChannel"/>-->
+
+    <int:chain input-channel="myRequestChannel" output-channel="myOutboundChannel">
+        <!--<int:header-enricher>
+            <int:header name="simpSessionId" expression="'xxx'"/>
+        </int:header-enricher>-->
+    </int:chain>
+
+
+    <!--<int:channel id="myInboundChannel"/>
+    &lt;!&ndash; websocket inbound-channel-adapter &ndash;&gt;
+    <int-websocket:inbound-channel-adapter id="myInboundChannelAdapter"
+                                           channel="myInboundChannel"
+                                           container="myServerContainer"/>-->
+
+
+</beans>

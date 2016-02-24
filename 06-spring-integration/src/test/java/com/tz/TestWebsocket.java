@@ -31,14 +31,17 @@ import java.io.IOException;
  *
  * @author Christian Posta
  */
-public class TestReadOrder2 {
+public class TestWebsocket {
 
 	@Test
 	public void test1() throws IOException, InterruptedException {
-		AbstractApplicationContext context =
-				new ClassPathXmlApplicationContext( "amp-test.xml");
-		System.out.println("TestReadOrder 2222...");
-        Thread.sleep(10000);
+		System.out.println("TestWebsocket...");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
+				"/activemq/amp-conn.xml",
+				"/activemq/amp-websocket.xml");
+
+        Thread.sleep(35*1000);
+
 		context.close();
 	}
 }

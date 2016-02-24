@@ -3,6 +3,7 @@ package com.tz.init;
 import com.tz.jms.JmsConfig;
 import com.tz.service.AppConfig;
 import com.tz.web.controller.WebConfig;
+import com.tz.web.si.SiConfig;
 import com.tz.web.socket.SocketConfig;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -21,7 +22,8 @@ public class MyWebInit extends AbstractAnnotationConfigDispatcherServletInitiali
         return new Class< ?>[] {
                 AppConfig.class,
                 JmsConfig.class,
-                SocketConfig.class};
+                SocketConfig.class,
+                SiConfig.class };
     }
 
     @Override

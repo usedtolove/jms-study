@@ -19,7 +19,7 @@ import org.springframework.util.Assert;
  */
 @Configuration
 @PropertySource("classpath:jms-config.properties")
-@ImportResource(locations = "classpath:/activemq/amp-config.xml")
+//@ImportResource(locations = "classpath:/activemq/amp-config.xml")
 public class JmsConfig {
 
     @Autowired

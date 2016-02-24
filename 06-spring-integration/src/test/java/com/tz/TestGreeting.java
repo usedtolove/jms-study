@@ -15,9 +15,13 @@
  */
 package com.tz;
 
+import com.tz.web.socket.GreetingGateway;
 import org.junit.Test;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.integration.samples.cafe.Cafe;
+import org.springframework.integration.samples.cafe.DrinkType;
+import org.springframework.integration.samples.cafe.Order;
 
 import java.io.IOException;
 
@@ -31,14 +35,20 @@ import java.io.IOException;
  *
  * @author Christian Posta
  */
-public class TestReadOrder2 {
+public class TestGreeting {
 
 	@Test
 	public void test1() throws IOException, InterruptedException {
-		AbstractApplicationContext context =
-				new ClassPathXmlApplicationContext( "amp-test.xml");
-		System.out.println("TestReadOrder 2222...");
-        Thread.sleep(10000);
+		System.out.println("TestGreeting...");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext( "amp-test.xml");
+
+        GreetingGateway greetingGateway = (GreetingGateway) context.getBean("greetingGw");
+		for (int i = 1; i <= 10; i++) {
+            String message = "Greeting "+i;
+            greetingGateway.greeting(message);
+        	Thread.sleep(2000);
+		}
+
 		context.close();
 	}
 }
