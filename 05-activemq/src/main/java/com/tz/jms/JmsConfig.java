@@ -49,6 +49,7 @@ public class JmsConfig {
     public CachingConnectionFactory getCachingConnectionFactory(){
         CachingConnectionFactory ccf = new CachingConnectionFactory(getConnectionFactory());
         ccf.setSessionCacheSize(10); //cache size.
+        ccf.setCacheProducers(false);
         return ccf;
     }
 

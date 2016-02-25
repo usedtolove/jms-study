@@ -13,7 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.2.4.RELEASE</spring.version>
         <jackson.version>2.6.4</jackson.version>
-        <activemq.version>5.13.0</activemq.version>
+        <activemq.version>5.13.1</activemq.version>
 	</properties>
 
     <dependencies>
@@ -56,11 +56,10 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.16</version>
         </dependency>
-        <!-- activemq family -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-core</artifactId>
-            <version>5.7.0</version>
+            <artifactId>activemq-broker</artifactId>
+            <version>${activemq.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
